@@ -56,7 +56,9 @@ def extract_message_from_reply(question, reply, current, other, check, extension
     substring_found = False
 
     previous_idx = [m.start() for m in re.finditer(f"(^|\n){re.escape(current)}:", question)]
+    print(previous_idx)
     idx = [m.start() for m in re.finditer(f"(^|\n){re.escape(current)}:", reply)]
+    print(idx)
     idx = idx[len(previous_idx)-1]
 
     if extensions:

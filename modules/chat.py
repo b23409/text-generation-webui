@@ -57,7 +57,8 @@ def extract_message_from_reply(question, reply, current, other, check, extension
 
     previous_idx = [m.start() for m in re.finditer(f"(^|\n){re.escape(current)}:", question)]
     print(previous_idx)
-    print(reply)
+    print(current)
+    print(f"Escape: {re.escape(current)}")
     idx = [m.start() for m in re.finditer(f"(^|\n){re.escape(current)}:", reply)]
     print(idx)
     if len(idx) == 1:
